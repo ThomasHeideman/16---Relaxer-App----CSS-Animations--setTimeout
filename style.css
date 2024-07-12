@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* :root {
+    --variable: value;
+  } */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #224941 url(./src/bg.jpg) no-repeat center/cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 4rem;
+  margin: 6rem 0;
+  color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0 1px 3px rgba(14, 134, 108, 0.75));
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3rem auto auto;
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #010f12;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.gradient-circle {
+  background: conic-gradient(
+    #fff 0%,
+    #d3f8f1 2%,
+    #c4f6ec 19%,
+    #98f0de 21%,
+    #6ce9d0 54%,
+    #61d2bb 56%,
+    #418c7d 93%,
+    #b4d9d1 96%,
+    #fff 100%
+  );
+  height: calc(100% + 1.25rem);
+  width: calc(100% + 1.25rem);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -2;
+  box-shadow: 0px 0 40px -20px #c0f9eec4;
+}
+.pointer-container {
+  position: absolute;
+  top: -2.5rem;
+  left: 9.375rem;
+  width: 1.25rem;
+  height: 12.5rem;
+  animation: rotate 20s linear forwards 1s infinite;
+  transform-origin: bottom center;
+}
+
+.pointer {
+  display: block;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.container.grow {
+  animation: grow 4s linear forwards;
+}
+
+.container.shrink {
+  animation: shrink 8s linear forwards;
+}
+
+.container p {
+  margin: 0;
+}
+
+.container p.text {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px #333;
+}
+
+p.count {
+  animation: pulse 1s linear forwards infinite;
+  transition: 1s ease-in-out;
+
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    transform: scale(1.125);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
